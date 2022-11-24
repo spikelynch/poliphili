@@ -1,22 +1,5 @@
 module Main (main) where
 
-import TextGen (
-  TextGen,
-  Vocab,
-  TextGenCh,
-  runTextGen,
-  word,
-  aan,
-  weighted,
-  choose,
-  list,
-  randrep,
-  perhaps,
-  smartjoin,
-  upcase,
-  loadVocab
-  )
-
 import Control.Monad (forM)
 import Control.Monad.Loops (iterateUntil)
 import Data.List (intercalate)
@@ -26,16 +9,6 @@ import System.Random
 import System.Environment (getArgs)
 import qualified Data.Text as T
 import qualified Data.Text.IO as Tio
-
-outfile = "hosts.txt"
-
-nlines = 200
-
-default_max_length :: Int
-default_max_length = 140
-
-architecture :: Vocab -> TextGenCh
-architecture v = v "architecture"
 
 getDir (x:xs) = x
 getDir _      = "./"
