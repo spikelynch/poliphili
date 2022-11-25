@@ -2,13 +2,25 @@ module Main (main) where
 
 import Control.Monad (forM)
 import Control.Monad.Loops (iterateUntil)
-import Data.List (intercalate)
-import Data.Char (toUpper)
 import Text.Read (readMaybe)
 import System.Random
 import System.Environment (getArgs)
 import qualified Data.Text as T
 import qualified Data.Text.IO as Tio
+
+import TextGen (
+  runTextGen,
+  loadVocab,
+  smartjoin,
+  upcase
+  )
+
+
+import Poliphili (architecture)
+
+default_max_length :: Int
+default_max_length = 140
+
 
 getDir (x:xs) = x
 getDir _      = "./"

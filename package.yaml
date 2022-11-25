@@ -35,6 +35,13 @@ ghc-options:
 
 library:
   source-dirs: src
+  ghc-options:
+  - -threaded
+  - -rtsopts
+  - -with-rtsopts=-N
+  dependencies:
+  - textgen
+
 
 executables:
   poliphili-exe:

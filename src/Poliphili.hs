@@ -1,5 +1,5 @@
 module Poliphili
-    ( someFunc
+    ( architecture
     ) where
 
 
@@ -25,13 +25,44 @@ outfile = "hosts.txt"
 
 nlines = 200
 
-default_max_length :: Int
-default_max_length = 140
+
+-- garden
+
+--     lawn arrangement
+
+--     plants
+
+-- building
+
+--     colonnade
+
+--     facade
+
+--     floor
+
+--     ceiling
+
+--     roof
+
+--         detail
+
+-- tomb
+
+--    sad lover's story
+
+-- nymphs
+
+--   dresses
+
+--   hairstyles
+
+--   footwear
+
+--   dances
+
 
 architecture :: Vocab -> TextGenCh
 architecture v = v "architecture"
 
 
 
-someFunc :: IO ()
-someFunc = putStrLn "someFunc"
