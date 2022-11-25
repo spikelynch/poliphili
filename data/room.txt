@@ -1,0 +1,10 @@
+adytum
+pronaos
+hall
+antechamber
+chamber
+theatre
+collonade
+forecourt
+court
+xystus
