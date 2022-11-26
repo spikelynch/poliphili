@@ -16,7 +16,7 @@ import TextGen (
   )
 
 
-import Poliphili (architecture)
+import Poliphili (poliphili)
 
 default_max_length :: Int
 default_max_length = 140
@@ -38,7 +38,7 @@ main = do
   args <- getArgs
   v <- loadVocab (getDir args)
   max_length <- return $ maxLength args
-  archf <- return $ runTextGen $ architecture v
+  archf <- return $ runTextGen $ poliphili v
   result <- iterateUntil (\s -> length s <= max_length) $ do 
     band <- getStdRandom archf
     return $ upcase $ smartjoin band
