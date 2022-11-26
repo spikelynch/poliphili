@@ -1,0 +1,12 @@
+scarlet
+viridian
+purple
+black
+white
+azure
+lilac
+pink
+flesh-coloured
+green
+brown
+yellow
