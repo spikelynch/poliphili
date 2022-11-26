@@ -39,7 +39,5 @@ main = do
   v <- loadVocab (getDir args)
   max_length <- return $ maxLength args
   archf <- return $ runTextGen $ poliphili v
-  result <- iterateUntil (\s -> length s <= max_length) $ do 
-    band <- getStdRandom archf
-    return $ upcase $ smartjoin band
-  putStrLn result
+  output <- getStdRandom archf
+  putStrLn $ upcase $ smartjoin output
