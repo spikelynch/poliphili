@@ -34,29 +34,29 @@ number = choose $ map word [
     ]
 
 
-building :: Vocab -> TextGenCh
-building v = list [ preface, room1, room2, room3, room4, room5, room6 ]
-    where preface = list [ v "building", word ":" ]
-          room1 = chamber v
-          room2 = chamber v
-          room3 = perhaps (1, 2) (chamber v)
-          room4 = perhaps (1, 2) (chamber v)
-          room5 = perhaps (1, 2) (chamber v)
-          room6 = perhaps (1, 2) (chamber v)
+-- building :: Vocab -> TextGenCh
+-- building v = list [ preface, room1, room2, room3, room4, room5, room6 ]
+--     where preface = list [ v "building", word ":" ]
+--           room1 = chamber v
+--           room2 = chamber v
+--           room3 = perhaps (1, 2) (chamber v)
+--           room4 = perhaps (1, 2) (chamber v)
+--           room5 = perhaps (1, 2) (chamber v)
+--           room6 = perhaps (1, 2) (chamber v)
 
 
-chamber :: Vocab -> TextGenCh
-chamber v = list [ lineament1, lineament2, lineament3, lineament4, lineament5 ]
-    where lineament1 = lineament v
-          lineament2 = lineament v
-          lineament3 = lineament v
-          lineament4 = perhaps (1, 2) $ lineament v
-          lineament5 = perhaps (1, 2) $ lineament v
+-- chamber :: Vocab -> TextGenCh
+-- chamber v = list [ lineament1, lineament2, lineament3, lineament4, lineament5 ]
+--     where lineament1 = lineament v
+--           lineament2 = lineament v
+--           lineament3 = lineament v
+--           lineament4 = perhaps (1, 2) $ lineament v
+--           lineament5 = perhaps (1, 2) $ lineament v
 
 
 -- need a starting phrase
-lineament :: Vocab -> TextGenCh
-lineament v = list [ detail1, detail2, detail3, detail4, detail5, detail6 ]
+lineament :: Vocab -> [ TextGenCh ]
+lineament v = [ detail1, detail2, detail3, detail4, detail5, detail6 ]
     where detail1 = details v
           detail2 = spatialdetails v
           detail3 = spatialdetails v
@@ -105,8 +105,8 @@ stone v = choose [ plain, coloured, comparative ]
           comparative = list [ v "stone", word "the colour of", v "substance"]
 
 
-poliphili :: Vocab -> TextGenCh
-poliphili v = building v
+poliphili :: Vocab -> [ TextGenCh ]
+poliphili v = lineament v
 
 
 
