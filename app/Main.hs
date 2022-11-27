@@ -57,4 +57,4 @@ main :: IO ()
 main = do
   args <- getArgs
   v <- loadVocab (getDir args)
-  generate v 5000
+  generate v 500000
