@@ -1,6 +1,6 @@
 module Main (main) where
 
-import Control.Monad (forM)
+import Control.Monad (mapM)
 import Control.Monad.Loops (iterateUntil)
 import Text.Read (readMaybe)
 import System.Random
@@ -9,6 +9,7 @@ import qualified Data.Text as T
 import qualified Data.Text.IO as Tio
 
 import TextGen (
+  Vocab,
   runTextGen,
   loadVocab,
   smartjoin,
@@ -32,12 +33,17 @@ maxLength (a:b:cs) = case readMaybe b of
   Nothing  -> default_max_length
 maxLength _        = default_max_length
 
+
+generate :: Vocab -> Int -> IO ()
+generate v remain = do
+  sentence <- getStdRandom $ runTextGen $ poliphili v
+  output <- return $ upcase $ smartjoin sentence
+  putStrLn output
+  putStrLn "\n"
+  generate v remain
   
 main :: IO ()
 main = do
   args <- getArgs
   v <- loadVocab (getDir args)
-  max_length <- return $ maxLength args
-  archf <- return $ runTextGen $ poliphili v
-  output <- getStdRandom archf
-  putStrLn $ upcase $ smartjoin output
+  generate v 10000

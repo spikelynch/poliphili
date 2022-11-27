@@ -1,0 +1,6 @@
+temple
+fane
+palace
+theatre
+structure
+pyramid
