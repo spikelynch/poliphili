@@ -1,16 +1,8 @@
-TODO - Sunday 27th
+TODO - before publication
 
+- a loop which picks a random line from each building and generates a
+StableDiffusion graphic
 
-* the architectural system
-
-- designs (socles and such)
-
-- a lineament, an array of designs 'above and below' - forming a wall, facade, collonade, ceiling etc
-
-- a chamber with several lineaments
-
-- a building with one or more of these
-
-* a garden
-
-
+grid-028 The hypotrachelia had four orbiculi carved from jade the colour of flesh, such as Caesar never built.
+grid-029 I will briefly describe this temple, for I admired its praiseworthy delicacy and its masterly severity.
+grid-030 The zophorus had seven tori of soapstone the colour of morning mist.
